@@ -1,0 +1,6 @@
+##Rename configfile.py.dist to:
+##   configfile.py
+
+#Email of the Mendeley user
+mendeley_user=''
+

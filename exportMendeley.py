@@ -30,9 +30,9 @@ except:
 
 #Try to connect
 linux_username=getpass.getuser()
-#conn = sqlite3.connect('/home/' + linux_username + '/.local/share/data/Mendeley Ltd./Mendeley Desktop/' + mendeley_user + '@www.mendeley.com.sqlite')
+conn = sqlite3.connect('/home/' + linux_username + '/.local/share/data/Mendeley Ltd./Mendeley Desktop/' + mendeley_user + '@www.mendeley.com.sqlite')
 #TEMP DB FOR TESTING
-conn = sqlite3.connect(mendeley_user + '@www.mendeley.com.sqlite')
+#conn = sqlite3.connect(mendeley_user + '@www.mendeley.com.sqlite')
 
 #########################################################################
 # FUNCTION DECLARATIONS							#

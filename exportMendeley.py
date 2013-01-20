@@ -78,10 +78,15 @@ def export(folderID):
 		for y in allauthors:
 			if type(y[0])!=type(None):
 				f_name = y[0]
+				f_name = f_name.title()
 			else:
 				f_name = ""
 			if type(y[1])!=type(None):
-				l_name = y[1]
+				l_name = y[1].title()
+				l_names = l_name.split("-")
+				for i, w in enumerate(l_names):
+					l_names[i] = w.title()
+				l_name.join(l_names)
 			else:
 				l_name = ""
 			if a_counter==1:
@@ -94,11 +99,13 @@ def export(folderID):
 		d_year = str(x[1])
 		if type(x[2])!=type(None):
 			d_title = x[2]
+			d_title = d_title.title()
 		else:
 			d_title = ""
 
 		if type(x[3])!=type(None):
 			d_journal = x[3]
+			d_journal = d_journal.capitalize()
 		else:
 			d_journal = ""
 		if type(x[4])!=type(None):

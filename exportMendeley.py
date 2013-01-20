@@ -123,6 +123,7 @@ def export(folderID):
 		count_authors=cursor3.fetchone()[0]
 		cursor3.execute('SELECT Files.localUrl FROM DocumentFiles, Files WHERE DocumentFiles.documentid=' + str(x[0]) + ' AND DocumentFiles.hash=Files.hash')
 		allfiles=cursor3.fetchall()
+		f_counter=0
 		for z in allfiles:
 			f_url = z[0]
 			f_url = f_url.encode('ascii')
@@ -131,8 +132,9 @@ def export(folderID):
 				f_url = urllib.unquote(f_url)
 				f_url.replace(' ', '\\ ')
 				if os.path.exists(urllib.unquote(f_url))==True:
-					shutil.copy(urllib.unquote(f_url), 'html/files/' + str(x[0]) + '.pdf')
+					shutil.copy(urllib.unquote(f_url), 'html/files/' + str(x[0]) + '-' + str(f_counter) + '.pdf')
 					f.write(' [<a href=\"files/' + str(x[0]) + '.pdf\">PDF</a>]')
+					f_counter = f_counter+1
 		cursor3.close()
 		f.write("<br>\n")
 	cursor.close()

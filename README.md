@@ -21,3 +21,6 @@ The results are saved in the format:
 
 Inside the 'html' folder there is a 'files' folder that holds the pdf files associated with each paper.
 
+Why this?
+I tried the Mendeley API but could not figure it out but for the most basic things. There is little info and examples, not that I an such a good programmer, but still...). For what I wanted, which was to export some papers to a website with their PDFs and update it a few times a year, using the API seemed like overkill. I found that the Mendeley Desktop application uses a sqlite database, which I can easily read and parse. 
+
